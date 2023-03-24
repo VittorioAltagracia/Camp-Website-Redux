@@ -11,6 +11,7 @@ const CommentsList = ({ campsiteId }) => {
         <h4>Comments</h4>
         {comments.map((comment) => {
           return <Comment key={comment.id} comment={comment} />;
+          // above: passing entire comment object as a prop to Comment component
         })}
       </Col>
     );
