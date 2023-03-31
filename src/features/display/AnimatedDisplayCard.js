@@ -17,6 +17,7 @@ const AnimatedDisplayCard = ({ item }) => {
   }, []);
 
   return (
+    // animated.div gets a variable created above as a prop to style cards below
     <animated.div style={animatedStyle}>
       <Card>
         <CardImg src={image} alt={name} />
