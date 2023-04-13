@@ -9,6 +9,7 @@ import {
 import { NavLink } from "react-router-dom";
 import NucampLogo from "../app/assets/img/logo.png";
 import { useState } from "react";
+import UserLoginForm from "../features/user/UserLoginForm.js";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,6 +44,7 @@ const Header = () => {
               </NavLink>
             </NavItem>
           </Nav>
+          <UserLoginForm />
         </Collapse>
       </Navbar>
     </>

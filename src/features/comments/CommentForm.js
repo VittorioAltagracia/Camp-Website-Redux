@@ -7,20 +7,29 @@ import {
   FormGroup,
   Label,
 } from "reactstrap";
+import { useDispatch } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { validateCommentForm } from "../../utils/validateCommentForm";
+import { addComment } from "./CommentSlice";
 
 const CommentForm = ({ campsiteId }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
+  const dispatch = useDispatch();
+  // useDispatch is a method of the Redux Store object
+  // this is the easiest way to use it
   const handleSubmit = (values) => {
     const comment = {
       campsiteId: parseInt(campsiteId),
       rating: values.rating,
       author: values.author,
       text: values.commentText,
+      date: new Date(Date.now()).toISOString(),
     };
     console.log(comment);
+    dispatch(addComment(comment));
+    // passing actionCreator function => passing to it the new comment object
+    // Action object will be dispatched by the dispatch function which will trigger caseReducer for add comment pushing a new comment to comments array
     setModalOpen(false);
   };
 
