@@ -10,7 +10,7 @@ import {
 import { useDispatch } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { validateCommentForm } from "../../utils/validateCommentForm";
-import { addComment } from "./CommentSlice";
+import { postComment } from "./CommentSlice";
 
 const CommentForm = ({ campsiteId }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -27,7 +27,7 @@ const CommentForm = ({ campsiteId }) => {
       date: new Date(Date.now()).toISOString(),
     };
     console.log(comment);
-    dispatch(addComment(comment));
+    dispatch(postComment(comment));
     // passing actionCreator function => passing to it the new comment object
     // Action object will be dispatched by the dispatch function which will trigger caseReducer for add comment pushing a new comment to comments array
     setModalOpen(false);
