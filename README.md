@@ -1,5 +1,6 @@
 # NuCamp App
 
+The project is complete, the only thing preventing me from deploying is that the data needs to be moved to a different server, currently the app fetches the data from a local JSON server.
 ## To run the project:
 In the project directory, execute:
 
